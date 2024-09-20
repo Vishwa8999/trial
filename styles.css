@@ -90,10 +90,12 @@ body, html {
 .title h1 {
     font-size: 1.8rem;
     font-family: "Roboto Slab", serif;
+    color: #fff;
 }
 
 .title p {
     font-size: 1rem;
+    color: #fff;
 }
 
 /* Navbar Styling */
