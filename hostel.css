@@ -51,6 +51,7 @@ body, html {
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
 }
+
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -68,24 +69,24 @@ body, html {
     }
     100% {
         text-shadow: 2px 2px 8px rgba(243, 238, 238, 0.5), 0 0 20px #16a085, 0 0 40px #16a085;
-    }
+    }
 }
 
-.list{
+.list {
     padding: 20px;
 }
 
 .logo img {
     height: 80px;
-    padding:10px;
+    padding: 10px;
 }
-.name{
+
+.name {
     padding: 20px;
 }
 
 .title h1 {
     font-size: 1.8rem;
-  
     font-family: "Roboto Slab";
 }
 
@@ -99,9 +100,10 @@ nav {
     z-index: 1; /* Ensure nav is above the video */
     background-color: rgba(34, 34, 34, 0.7); /* Semi-transparent background */
     padding: 10px 0;
-    background-color: transparent;
     font-family: 'Roboto';
+    background-color: transparent;
 }
+
 /* Basic button styles */
 .contact-btn {
     display: inline-block;
@@ -116,10 +118,10 @@ nav {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-  }
-  
-  /* Animation effect */
-  .contact-btn::before {
+}
+
+/* Animation effect */
+.contact-btn::before {
     content: '';
     position: absolute;
     top: 50%;
@@ -131,31 +133,29 @@ nav {
     border-radius: 50%;
     transform: translate(-50%, -50%) scale(0);
     z-index: 0;
-  }
-  
-  /* Button text */
-  .contact-btn span {
+}
+
+/* Button text */
+.contact-btn span {
     position: relative;
     z-index: 1;
-  }
-  
-  /* Hover effect */
-  .contact-btn:hover {
+}
+
+/* Hover effect */
+.contact-btn:hover {
     background-color: #0056b3;
-  }
-  
-  /* Hover animation */
-  .contact-btn:hover::before {
+}
+
+/* Hover animation */
+.contact-btn:hover::before {
     transform: translate(-50%, -50%) scale(1);
-  }
-  
+}
 
 nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
     font-family: "Orbitron", sans-serif;
-    
 }
 
 nav ul li {
