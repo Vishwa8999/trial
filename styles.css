@@ -53,6 +53,9 @@ body, html {
     font-optical-sizing: auto;
 }
 
+.list{
+    padding: 20px;
+}
 
 .logo img {
     height: 80px;
