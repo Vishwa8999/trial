@@ -1,26 +1,151 @@
-/* General Styling */
-body {
-    font-family: Arial, sans-serif;
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f7f7f7;
+    box-sizing: border-box;
 }
 
-header {
-    background-color: #004080;
-    color: white;
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Header Styling */
+.header {
+    display: flex;
+    align-items: left;
+    justify-content: left;
     padding: 20px;
+    color: white;
+    position: relative;
+    z-index: 1; /* Ensure header is above the video */
+    background: transparent;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    animation: fadeIn 1.5s ease-in-out; /* Add fade-in effect */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes textGlow {
+    0% {
+        text-shadow: 2px 2px 8px rgba(234, 238, 239, 0.5), 0 0 10px #1abc9c, 0 0 20px #1abc9c;
+    }
+    100% {
+        text-shadow: 2px 2px 8px rgba(243, 238, 238, 0.5), 0 0 20px #16a085, 0 0 40px #16a085;
+    }
+}
+
+.list {
+    padding: 20px;
+}
+
+.logo img {
+    height: 80px;
+    padding: 10px;
+}
+
+.name {
+    padding: 20px;
+}
+
+.title h1 {
+    font-size: 1.8rem;
+    font-family: "Roboto Slab", serif;
+}
+
+.title p {
+    font-size: 1rem;
+}
+
+/* Navbar Styling */
+nav {
+    position: relative;
+    z-index: 1; /* Ensure nav is above the video */
+    background-color: rgba(34, 34, 34, 0.7); /* Semi-transparent background */
+    padding: 10px 0;
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+nav:hover {
+    background-color: rgba(34, 34, 34, 0.9); /* Darken the navbar on hover */
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    font-family: "Orbitron", sans-serif;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Add hover effects */
+}
+
+nav ul li a:hover {
+    background-color: #444;
+    border-radius: 5px;
+    transform: translateY(-5px); /* Move up slightly on hover */
+}
+
+/* Basic button styles */
+.contact-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
     text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-h1 {
-    margin: 0;
-    font-size: 36px;
+.contact-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: 0;
 }
 
-p {
-    font-size: 18px;
-    margin-top: 10px;
+.contact-btn span {
+    position: relative;
+    z-index: 1;
+}
+
+.contact-btn:hover {
+    background-color: #0056b3;
+}
+
+.contact-btn:hover::before {
+    transform: translate(-50%, -50%) scale(1);
 }
 
 /* Hostel Images Section */
@@ -105,3 +230,40 @@ p {
 .facility p {
     font-size: 16px;
 }
+/* Social Sidebar */
+.social-sidebar {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1;
+}
+
+.social-sidebar a {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 50%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-sidebar a:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.social-sidebar a img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Social icon backgrounds */
+.social-sidebar a.facebook { background-color: #3b5998; }
+.social-sidebar a.twitter { background-color: #0a0b0b; }
+.social-sidebar a.instagram { background-color: #d34b78; }
+.social-sidebar a.linkedin { background-color: #0077b5; }
+.social-sidebar a.youtube { background-color: #ff0000; }
+
