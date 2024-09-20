@@ -50,6 +50,7 @@ body, html {
     background: transparent;
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
+    animation: fadeIn 1.5s ease-in-out; /* Add fade-in effect */
 }
 
 @keyframes fadeIn {
