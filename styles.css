@@ -199,6 +199,402 @@ nav ul li a:hover {
     max-width: 600px;
     margin: 0 auto;
 }
+/* flex and rotate */
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+  }
+  
+  /* Header Layout */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(0, 0, 0); /* Shaded black background (70% opacity) */
+    color: #fff;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 10px rgba(255, 251, 251, 1.0); /* Black shadow at the bottom */
+}
+
+  
+  /* Logo Styling */
+  .logo img {
+    height: 80px;
+  }
+  
+  /* Title Styling */
+  .title {
+    flex: 1;
+    text-align: center;
+    margin-left: -50px;
+  }
+  
+
+/* Add sliding effect to h1 and p tags */
+.title h1, .title p {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Book Icon for toggling navbar */
+* Header Layout */
+header {
+    display: flex;
+    justify-content: space-between; /* Items spaced out */
+    align-items: center;
+    padding: 20px;
+    background-color: #daecff;
+    color: #fff;
+    position: relative;
+}
+
+/* Book Icon for toggling navbar */
+.nav-icon {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.nav-icon.clicked {
+    transform: translateX(-240px); /* Move left when clicked */
+}
+
+/* Navbar styling */
+nav {
+    position: absolute;
+    top: 0;
+    right: -250px; /* Off-screen initially */
+    height: 100%;
+    width: 250px; /* Width of the nav */
+    background-color: #000000;
+    color: #000000;
+    transition: right 0.5s ease;
+}
+
+nav.expanded {
+    right: 0; /* Slide in */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+ /* Remove hover effect and apply active color */
+ nav a {
+  text-decoration: none;
+  color: #edf2f4;
+  padding: 10px;
+  transition: background 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
+
+nav a.active {
+  color: #d90429; /* Active color when clicked */
+  text-shadow: 0 0 5px #d90429, 0 0 10px #d90429; /* Glowing effect */
+}
+/* DEPT */
+/* Main container for sections */
+.container, .college-section {
+  margin: 0;
+  padding: 10PX;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;  /* Dynamically fills the height */
+  width: 100vw;
+  height: 75vh;
+  gap: 0px;
+}
+
+
+/* College sections */
+.college-section {
+  position: relative;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  height: 70vh; /* Half of the viewport height to create a box-like appearance */
+  width: 23vw; /* Reduce width to 20% of the viewport width */
+}
+
+#engineering {
+  background-image: url('aib.jpg'); /* Replace with the actual image path for AI & DS */
+}
+
+#medical {
+  background-image: url('cse.jpg'); /* Replace with the actual image path for CSE */
+}
+
+#schools {
+  background-image: url('cyb.jpg'); /* Replace with the actual image path for Cyber Security */
+}
+
+#polytechnic {
+  background-image: url('bme.jpg'); /* Replace with the actual image path for Biomedical */
+}
+
+/* Overlay and rotation effect */
+.overlay {
+  position: absolute;
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7); /* Add a dark overlay for readability */
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Space between elements */
+  transition: opacity 0.3s ease;
+}
+
+.college-section:hover .overlay {
+  opacity: 1;
+}
+
+/* Order of elements in the overlay */
+.overlay h2 {
+  font-size: 24px;
+  margin-bottom: 10px; /* Space below the title */
+}
+
+.icon {
+  font-size: 60px;
+  color: white;
+  transition: transform 0.6s ease;
+}
+
+.overlay p {
+  font-size: 18px;
+  margin-top: 10px; /* Space above the paragraph */
+}
+
+/* Hover effect for icon rotation */
+.college-section:hover .icon {
+  transform: rotate(360deg);
+}
+
+.college-section:hover {
+  transform: scale(1.05);
+}
+
+/* Modal styles */
+.info-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.info-content {
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  max-width: 500px;
+  width: 80%;
+  border-radius: 8px;
+  position: relative;
+  animation: fadeIn 0.5s ease;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+      grid-template-columns: 1fr; /* Switch to vertical layout on smaller screens */
+      grid-template-rows: repeat(4, 1fr);
+  }
+
+  .college-section {
+      width: 100%; /* Full width for each section on smaller screens */
+      height: 25vh; /* Adjust height for smaller screens */
+  }
+}
+
+/* flex */
+.card-container {
+  display: flex;
+  gap: 20px; /* Adjust gap between cards */
+  justify-content: space-between; /* Distributes space evenly */
+  padding: 20px; /* Adds padding on the left and right ends */
+  background-color: #000000;
+  color: whitesmoke;
+}
+
+.card {
+  width: 250px;
+  height: 350px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  text-align: center;
+  background-size: cover; /* Ensure the background image covers the card */
+  background-position: center; /* Center the background image */
+}
+
+.card-header {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  transition: bottom 0.5s ease;
+}
+
+.card-content {
+  padding: 20px; /* Adjust padding for better fit */
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  text-align: left; /* Align text to the left for better readability */
+}
+
+.card.active .card-header {
+  bottom: 100%;
+}
+
+.card.active .card-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.card p {
+  font-size: 14px;
+  color: #fff9f9;
+  margin: 0; /* Remove default margin */
+  line-height: 1.5; /* Adjust line height for readability */
+}
+
+  
+/* he */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .hero video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+ 
+  
+  
+  .info {
+    padding: 50px;
+    background-color: #f9f9f9;
+  }
+  
+  .info h3 {
+    font-size: 32px;
+  }
+
+
+
+
+/* Footer */
+footer {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    flex-shrink: 0;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+footer .social-icons a {
+    display: block;
+    color: white;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+footer .social-icons a:hover {
+    color: #ffcc00;
+}
+
 
 /* Social Sidebar */
 .social-sidebar {
