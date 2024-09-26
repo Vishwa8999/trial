@@ -1,629 +1,231 @@
 /* General Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body, html {
-    height: 100%;
-    font-family: Arial, sans-serif;
+  height: 100%;
+  font-family: Arial, sans-serif;
 }
 
 /* Full-page background video */
 .video-container {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
 }
 
 .background-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1; /* Send the video behind everything else */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Send the video behind everything else */
 }
 
 /* Overlay to darken the background */
 .video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Slightly transparent black */
-    z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Slightly transparent black */
+  z-index: 0;
 }
 
 /* Header Styling */
 .header {
-    display: flex;
-    align-items: left;
-    justify-content: left;
-    padding: 20px;
-    color: white;
-    position: relative;
-    z-index: 1; /* Ensure header is above the video */
-    background: transparent;
-    font-family: "Open Sans", sans-serif;
-    font-optical-sizing: auto;
-    animation: fadeIn 1.5s ease-in-out; /* Add fade-in effect */
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  padding: 20px;
+  color: white;
+  position: relative;
+  z-index: 1; /* Ensure header is above the video */
+  background: transparent;
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  animation: fadeIn 1.5s ease-in-out; /* Add fade-in effect */
 }
 
 @keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes textGlow {
-    0% {
-        text-shadow: 2px 2px 8px rgba(234, 238, 239, 0.5), 0 0 10px #1abc9c, 0 0 20px #1abc9c;
-    }
-    100% {
-        text-shadow: 2px 2px 8px rgba(243, 238, 238, 0.5), 0 0 20px #16a085, 0 0 40px #16a085;
-    }
-}
-
-.list {
-    padding: 20px;
-}
-
-.logo img {
-    height: 80px;
-    padding: 10px;
-}
-
-.name {
-    padding: 20px;
-}
-
-.title h1 {
-    font-size: 1.8rem;
-    font-family: "Roboto Slab", serif;
-    color: #fff;
-}
-
-.title p {
-    font-size: 1rem;
-    color: #fff;
-}
-
-/* Navbar Styling */
-nav {
-    position: relative;
-    z-index: 1; /* Ensure nav is above the video */
-    background-color: rgba(34, 34, 34, 0.7); /* Semi-transparent background */
-    padding: 10px 0;
-    font-family: 'Roboto', sans-serif;
-    transition: background-color 0.3s ease; /* Smooth transition on hover */
-}
-
-nav:hover {
-    background-color: rgba(34, 34, 34, 0.9); /* Darken the navbar on hover */
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    font-family: "Orbitron", sans-serif;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Add hover effects */
-}
-
-nav ul li a:hover {
-    background-color: #444;
-    border-radius: 5px;
-    transform: translateY(-5px); /* Move up slightly on hover */
-}
-
-/* Basic button styles */
-.contact-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #007BFF;
-    border: none;
-    border-radius: 5px;
-    text-align: center;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.contact-btn::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300%;
-    height: 300%;
-    background-color: rgba(255, 255, 255, 0.2);
-    transition: all 0.3s ease;
-    border-radius: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    z-index: 0;
-}
-
-.contact-btn span {
-    position: relative;
-    z-index: 1;
-}
-
-.contact-btn:hover {
-    background-color: #0056b3;
-}
-
-.contact-btn:hover::before {
-    transform: translate(-50%, -50%) scale(1);
-}
-
-/* Centered Content Overlay */
-.content-overlay {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    color: white;
-    padding-top: 20%;
-    animation: fadeIn 2s ease-in-out; /* Fade-in for the overlay content */
-}
-
-.content-overlay h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-.content-overlay p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto;
-}
-/* flex and rotate */
-/* General styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Global Styles */
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    box-sizing: border-box;
+  0% {
+      opacity: 0;
+      transform: translateY(-20px);
   }
-  
-  /* Header Layout */
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: rgb(0, 0, 0); /* Shaded black background (70% opacity) */
-    color: #fff;
-    flex-wrap: wrap;
-    box-shadow: 0 4px 10px rgba(255, 251, 251, 1.0); /* Black shadow at the bottom */
-}
-
-  
-  /* Logo Styling */
-  .logo img {
-    height: 80px;
-  }
-  
-  /* Title Styling */
-  .title {
-    flex: 1;
-    text-align: center;
-    margin-left: -50px;
-  }
-  
-
-/* Add sliding effect to h1 and p tags */
-.title h1, .title p {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: slideIn 0.5s forwards;
-}
-
-@keyframes slideIn {
-  to {
+  100% {
       opacity: 1;
       transform: translateY(0);
   }
 }
 
-/* Book Icon for toggling navbar */
-* Header Layout */
-header {
-    display: flex;
-    justify-content: space-between; /* Items spaced out */
-    align-items: center;
-    padding: 20px;
-    background-color: #daecff;
-    color: #fff;
-    position: relative;
+@keyframes textGlow {
+  0% {
+      text-shadow: 2px 2px 8px rgba(234, 238, 239, 0.5), 0 0 10px #1abc9c, 0 0 20px #1abc9c;
+  }
+  100% {
+      text-shadow: 2px 2px 8px rgba(243, 238, 238, 0.5), 0 0 20px #16a085, 0 0 40px #16a085;
+  }
 }
 
-/* Book Icon for toggling navbar */
-.nav-icon {
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+.list {
+  padding: 20px;
 }
 
-.nav-icon.clicked {
-    transform: translateX(-240px); /* Move left when clicked */
+.logo img {
+  height: 80px;
+  padding: 10px;
 }
 
-/* Navbar styling */
+.name {
+  padding: 20px;
+}
+
+.title h1 {
+  font-size: 1.8rem;
+  font-family: "Roboto Slab", serif;
+}
+
+.title p {
+  font-size: 1rem;
+}
+
+/* Navbar Styling */
 nav {
-    position: absolute;
-    top: 0;
-    right: -250px; /* Off-screen initially */
-    height: 100%;
-    width: 250px; /* Width of the nav */
-    background-color: #000000;
-    color: #000000;
-    transition: right 0.5s ease;
+  position: relative;
+  z-index: 1; /* Ensure nav is above the video */
+  background-color: rgba(34, 34, 34, 0.7); /* Semi-transparent background */
+  padding: 10px 0;
+  font-family: 'Roboto', sans-serif;
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
 }
 
-nav.expanded {
-    right: 0; /* Slide in */
+nav:hover {
+  background-color: rgba(34, 34, 34, 0.9); /* Darken the navbar on hover */
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  font-family: "Orbitron", sans-serif;
 }
 
- /* Remove hover effect and apply active color */
- nav a {
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
   text-decoration: none;
-  color: #edf2f4;
-  padding: 10px;
-  transition: background 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Add hover effects */
 }
 
-nav a.active {
-  color: #d90429; /* Active color when clicked */
-  text-shadow: 0 0 5px #d90429, 0 0 10px #d90429; /* Glowing effect */
-}
-/* DEPT */
-/* Main container for sections */
-.container, .college-section {
-  margin: 0;
-  padding: 10PX;
+nav ul li a:hover {
+  background-color: #444;
+  border-radius: 5px;
+  transform: translateY(-5px); /* Move up slightly on hover */
 }
 
-.container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr;  /* Dynamically fills the height */
-  width: 100vw;
-  height: 75vh;
-  gap: 0px;
-}
-
-
-/* College sections */
-.college-section {
+/* Basic button styles */
+.contact-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
   position: relative;
-  cursor: pointer;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease;
   overflow: hidden;
-  height: 70vh; /* Half of the viewport height to create a box-like appearance */
-  width: 23vw; /* Reduce width to 20% of the viewport width */
 }
 
-#engineering {
-  background-image: url('aib.jpg'); /* Replace with the actual image path for AI & DS */
-}
-
-#medical {
-  background-image: url('cse.jpg'); /* Replace with the actual image path for CSE */
-}
-
-#schools {
-  background-image: url('cyb.jpg'); /* Replace with the actual image path for Cyber Security */
-}
-
-#polytechnic {
-  background-image: url('bme.jpg'); /* Replace with the actual image path for Biomedical */
-}
-
-/* Overlay and rotation effect */
-.overlay {
+.contact-btn::before {
+  content: '';
   position: absolute;
-  text-align: center;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.7); /* Add a dark overlay for readability */
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px; /* Space between elements */
-  transition: opacity 0.3s ease;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  z-index: 0;
 }
 
-.college-section:hover .overlay {
-  opacity: 1;
-}
-
-/* Order of elements in the overlay */
-.overlay h2 {
-  font-size: 24px;
-  margin-bottom: 10px; /* Space below the title */
-}
-
-.icon {
-  font-size: 60px;
-  color: white;
-  transition: transform 0.6s ease;
-}
-
-.overlay p {
-  font-size: 18px;
-  margin-top: 10px; /* Space above the paragraph */
-}
-
-/* Hover effect for icon rotation */
-.college-section:hover .icon {
-  transform: rotate(360deg);
-}
-
-.college-section:hover {
-  transform: scale(1.05);
-}
-
-/* Modal styles */
-.info-modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.info-content {
-  background-color: white;
-  padding: 20px;
-  text-align: center;
-  max-width: 500px;
-  width: 80%;
-  border-radius: 8px;
+.contact-btn span {
   position: relative;
-  animation: fadeIn 0.5s ease;
+  z-index: 1;
 }
 
-.close {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  font-size: 24px;
-  cursor: pointer;
+.contact-btn:hover {
+  background-color: #0056b3;
 }
 
-/* Animation */
-@keyframes fadeIn {
-  0% { opacity: 0; transform: scale(0.9); }
-  100% { opacity: 1; transform: scale(1); }
+.contact-btn:hover::before {
+  transform: translate(-50%, -50%) scale(1);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .container {
-      grid-template-columns: 1fr; /* Switch to vertical layout on smaller screens */
-      grid-template-rows: repeat(4, 1fr);
-  }
-
-  .college-section {
-      width: 100%; /* Full width for each section on smaller screens */
-      height: 25vh; /* Adjust height for smaller screens */
-  }
-}
-
-/* flex */
-.card-container {
-  display: flex;
-  gap: 20px; /* Adjust gap between cards */
-  justify-content: space-between; /* Distributes space evenly */
-  padding: 20px; /* Adds padding on the left and right ends */
-  background-color: #000000;
-  color: whitesmoke;
-}
-
-.card {
-  width: 250px;
-  height: 350px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+/* Centered Content Overlay */
+.content-overlay {
   position: relative;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+  z-index: 1;
   text-align: center;
-  background-size: cover; /* Ensure the background image covers the card */
-  background-position: center; /* Center the background image */
-}
-
-.card-header {
-  background-color: rgba(0, 0, 0, 0.6);
   color: white;
-  padding: 10px;
-  text-align: center;
-  font-size: 18px;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  transition: bottom 0.5s ease;
+  padding-top: 20%;
+  animation: fadeIn 2s ease-in-out; /* Fade-in for the overlay content */
 }
 
-.card-content {
-  padding: 20px; /* Adjust padding for better fit */
-  opacity: 0;
-  transform: translateY(100%);
-  transition: transform 0.5s ease, opacity 0.5s ease;
-  text-align: left; /* Align text to the left for better readability */
+.content-overlay h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
 
-.card.active .card-header {
-  bottom: 100%;
+.content-overlay p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
 }
-
-.card.active .card-content {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.card p {
-  font-size: 14px;
-  color: #fff9f9;
-  margin: 0; /* Remove default margin */
-  line-height: 1.5; /* Adjust line height for readability */
-}
-
-  
-/* he */
-.hero {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-  }
-  
-  .hero video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
- 
-  
-  
-  .info {
-    padding: 50px;
-    background-color: #f9f9f9;
-  }
-  
-  .info h3 {
-    font-size: 32px;
-  }
-
-
-
-
-/* Footer */
-footer {
-    background-color: #000000;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    width: 100%;
-    bottom: 0;
-    flex-shrink: 0;
-}
-
-footer p {
-    margin-bottom: 10px;
-}
-
-footer .social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-footer .social-icons a {
-    display: block;
-    color: white;
-    font-size: 24px;
-    transition: color 0.3s;
-}
-
-footer .social-icons a:hover {
-    color: #ffcc00;
-}
-
 
 /* Social Sidebar */
 .social-sidebar {
-    position: fixed;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    z-index: 1;
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1;
 }
 
 .social-sidebar a {
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 50%;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 50%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .social-sidebar a:hover {
-    transform: scale(1.2);
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  transform: scale(1.2);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .social-sidebar a img {
-    width: 40px;
-    height: 40px;
+  width: 40px;
+  height: 40px;
 }
 
 /* Social icon backgrounds */
