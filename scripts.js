@@ -52,16 +52,16 @@ function showInfo(college) {
 
     switch(college) {
         case 'engineering':
-            infoText.innerHTML = "<h2>Engineering College</h2><p>This is the Sri Sairam Engineering College in Chennai...</p>";
+            infoText.innerHTML = "<h2>Artificial intellegence and Data Science</h2><p>Driving innovation and insights through the power of Artificial Intelligence and Data Science....</p>";
             break;
         case 'medical':
-            infoText.innerHTML = "<h2>Medical College</h2><p>Sri Sairam Medical College provides state-of-the-art facilities...</p>";
+            infoText.innerHTML = "<h2>Computer science Engineering</h2><p>Advancing technology and shaping the future through innovation in Computer Science....</p>";
             break;
         case 'schools':
-            infoText.innerHTML = "<h2>Group of Schools</h2><p>Sri Sairam Group of Schools focuses on...</p>";
+            infoText.innerHTML = "<h2>Cyber security</h2><p>Protecting digital landscapes and ensuring a safer cyberspace through cutting-edge Cyber Security solutions....</p>";
             break;
         case 'polytechnic':
-            infoText.innerHTML = "<h2>Polytechnic College</h2><p>Sri Sairam Polytechnic College offers...</p>";
+            infoText.innerHTML = "<h2>Biomedical Engineering</h2><p>Integrating technology and medicine to innovate healthcare solutions in the Biomedical field....</p>";
             break;
     }
 
