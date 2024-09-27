@@ -56,21 +56,21 @@ body, html {
 
 @keyframes fadeIn {
   0% {
-    opacity: 0;
-    transform: translateY(-20px);
+      opacity: 0;
+      transform: translateY(-20px);
   }
   100% {
-    opacity: 1;
-    transform: translateY(0);
+      opacity: 1;
+      transform: translateY(0);
   }
 }
 
 @keyframes textGlow {
   0% {
-    text-shadow: 2px 2px 8px rgba(234, 238, 239, 0.5), 0 0 10px #1abc9c, 0 0 20px #1abc9c;
+      text-shadow: 2px 2px 8px rgba(234, 238, 239, 0.5), 0 0 10px #1abc9c, 0 0 20px #1abc9c;
   }
   100% {
-    text-shadow: 2px 2px 8px rgba(243, 238, 238, 0.5), 0 0 20px #16a085, 0 0 40px #16a085;
+      text-shadow: 2px 2px 8px rgba(243, 238, 238, 0.5), 0 0 20px #16a085, 0 0 40px #16a085;
   }
 }
 
@@ -87,6 +87,7 @@ body, html {
   overflow: hidden; /* Hide overflow for the shine effect */
 }
 
+
 .name {
   padding: 20px;
 }
@@ -96,19 +97,21 @@ body, html {
   font-size: 35px;
   font-weight: 1200;
   text-transform: uppercase;
-  color: white; /* White font */
+  color:white; /* White font */
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Black shadow */
   text-align: left;
   position: absolute;
   margin-top: 0;
-  top: 0;
+  top:0;
   left: 100px;
   right: 0;
   padding: 40px;
+  margin: 0 auto;
   z-index: 500;
   animation: glow 3s infinite ease-in-out;
 }
 
+/* Glow animation (adjusted to work with white font) */
 @keyframes glow {
   0% {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), 0 0 10px rgba(255, 255, 255, 0.5);
@@ -121,6 +124,7 @@ body, html {
   }
 }
 
+
 .title p {
   font-size: 1rem;
   font-family: "Roboto Slab", serif;
@@ -131,22 +135,25 @@ body, html {
   padding: 30px;
   position: relative;
   margin-top: 0;
-  top: 0;
+  top:0;
   left: 150px;
+  right: 0;
   padding: 20px;
+  margin: 0 auto;
   z-index: 500;
   background-color: transparent; /* Optional light background */
   border-bottom: 4px solid #f9dcc4; /* Optional accent */
   animation: fadeIn 2s ease-in-out;
 }
 
+/* Fade-in Animation */
 @keyframes fadeIn {
   0% {
     opacity: 0;
   }
   100% {
-    opacity: 1;
-  }
+    opacity: 1;
+  }
 }
 
 /* Navbar Styling */
@@ -250,8 +257,7 @@ nav ul li a:hover {
   max-width: 600px;
   margin: 0 auto;
 }
-
-/* DEPT Sections */
+/* DEPT */
 /* Main container for sections */
 .container, .college-section {
   margin: 0;
@@ -268,6 +274,7 @@ nav ul li a:hover {
   gap: 0px;
 }
 
+
 /* College sections */
 .college-section {
   position: relative;
@@ -279,68 +286,220 @@ nav ul li a:hover {
   justify-content: center;
   transition: transform 0.3s ease;
   overflow: hidden;
-  height: 70vh; /* Half of the viewport height */
-  width: 23vw; /* 23% of the viewport width */
+  height: 70vh; /* Half of the viewport height to create a box-like appearance */
+  width: 23vw; /* Reduce width to 20% of the viewport width */
 }
 
 #engineering {
-  background-image: url('images/cse.png'); /* Replace with the actual image path */
+  background-image: url('images/cse.png'); /* Replace with the actual image path for AI & DS */
 }
 
 #medical {
   background-image: url('images/aids.jpg.webp');
 }
-
 #schools {
-  background-image: url('images/cyber_security.png'); /* Replace with the actual image path */
+  background-image: url('images/cyber security.png'); /* Replace with the actual image path for Cyber Security */
 }
 
 #polytechnic {
-  background-image: url('images/biomedical_engineering.png'); /* Replace with the actual image path */
+  background-image: url('images/biomedical engineering.png'); /* Replace with the actual image path for Biomedical */
 }
 
 /* Overlay and rotation effect */
 .overlay {
   position: absolute;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
-  height: 100%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7); /* Add a dark overlay for readability */
   width: 100%;
-  transition: all 0.3s ease;
+  height: 100%;
   opacity: 0;
-  transform: rotateY(90deg);
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Space between elements */
+  transition: opacity 0.3s ease;
 }
 
 .college-section:hover .overlay {
   opacity: 1;
-  transform: rotateY(0deg);
 }
 
-.overlay h3 {
-  color: #fff;
+/* Order of elements in the overlay */
+.overlay h2 {
   font-size: 24px;
-  margin-bottom: 10px;
+  margin-bottom: 10px; /* Space below the title */
+}
+
+.icon {
+  font-size: 60px;
+  color: white;
+  transition: transform 0.6s ease;
 }
 
 .overlay p {
-  color: #ddd;
-  font-size: 16px;
+  font-size: 18px;
+  margin-top: 10px; /* Space above the paragraph */
 }
 
-/* College section hover effect */
+/* Hover effect for icon rotation */
+.college-section:hover .icon {
+  transform: rotate(360deg);
+}
+
 .college-section:hover {
-  transform: scale(1.05); /* Slightly enlarges the section on hover */
+  transform: scale(1.05);
 }
 
-/* Footer styling */
-footer {
-  text-align: center;
+/* Modal styles */
+.info-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.info-content {
+  background-color: white;
   padding: 20px;
-  background-color: #333;
-  color: #fff;
+  text-align: center;
+  max-width: 500px;
+  width: 80%;
+  border-radius: 8px;
+  position: relative;
+  animation: fadeIn 0.5s ease;
 }
 
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+      grid-template-columns: 1fr; /* Switch to vertical layout on smaller screens */
+      grid-template-rows: repeat(4, 1fr);
+  }
+
+  .college-section {
+      width: 100%; /* Full width for each section on smaller screens */
+      height: 25vh; /* Adjust height for smaller screens */
+  }
+}
+
+/* flex */
+.card-container {
+  display: flex;
+  gap: 20px; /* Adjust gap between cards */
+  justify-content: space-between; /* Distributes space evenly */
+  padding: 20px; /* Adds padding on the left and right ends */
+  background-color: #000000;
+  color: whitesmoke;
+  margin-top: 230px;
+}
+
+.card {
+  width: 250px;
+  height: 350px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  text-align: center;
+  background-size: cover; /* Ensure the background image covers the card */
+  background-position: center; /* Center the background image */
+}
+
+.card-header {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  transition: bottom 0.5s ease;
+}
+
+.card-content {
+  padding: 20px; /* Adjust padding for better fit */
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  text-align: left; /* Align text to the left for better readability */
+}
+
+.card.active .card-header {
+  bottom: 100%;
+}
+
+.card.active .card-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.card p {
+  font-size: 14px;
+  color: #fff9f9;
+  margin: 0; /* Remove default margin */
+  line-height: 1.5; /* Adjust line height for readability */
+}
+
+
+
+/* Social Sidebar */
+.social-sidebar {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1;
+}
+
+.social-sidebar a {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 50%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-sidebar a:hover {
+  transform: scale(1.2);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.social-sidebar a img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Social icon backgrounds */
+.social-sidebar a.facebook { background-color: #3b5998; }
+.social-sidebar a.twitter { background-color: #0a0b0b; }
+.social-sidebar a.instagram { background-color: #d34b78; }
+.social-sidebar a.linkedin { background-color: #0077b5; }
+.social-sidebar a.youtube { background-color: #ff0000; }
