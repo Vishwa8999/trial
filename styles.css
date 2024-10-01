@@ -79,13 +79,53 @@ body, html {
 }
 
 .logo-img img {
-  padding: 20px;
-  height: 150px; /* Set the height of the logo */
-  width: 150px; /* Ensure the width matches the height for a perfect circle */
+  padding: 30px;
+  height: 180px; /* Set the height of the logo */
+  width: 180px; /* Ensure the width matches the height for a perfect circle */
   border-radius: 50%; /* Makes the image circular */
   position: relative; /* Positioning context for the shine effect */
   overflow: hidden; /* Hide overflow for the shine effect */
+  right: 20px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Subtle glow around the logo */
+  animation: shinePulse 5s ease-in-out infinite; /* Add pulsing effect */
 }
+
+/* Shining effect with moving light */
+.logo-img img::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 70%);
+  transform: skewX(-20deg); /* Tilt the shine for a dynamic look */
+  animation: shineMove 2.5s ease-in-out infinite; /* Move the shine across the logo */
+}
+
+/* Animation for the moving shine */
+@keyframes shineMove {
+  0% {
+    left: -150%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+/* Pulse animation for a glowing effect */
+@keyframes shinePulse {
+  0% {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  }
+}
+
 
 
 .name {
@@ -94,7 +134,7 @@ body, html {
 
 .title h1 {
   font-family: "Roboto Slab", serif;
-  font-size: 35px;
+  font-size: 90px;
   font-weight: 1200;
   text-transform: uppercase;
   color:white; /* White font */
@@ -103,12 +143,75 @@ body, html {
   position: absolute;
   margin-top: 0;
   top:0;
-  left: 100px;
-  right: 0;
-  padding: 40px;
+  bottom: 100px;
+  left: 150px;
+  right: 50px;
+  padding: 10px;
   margin: 0 auto;
   z-index: 500;
-  animation: glow 3s infinite ease-in-out;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Glow animation (adjusted to work with white font) */
+@keyframes glow {
+  0% {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 255, 255, 0.8);
+  }
+  100% {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+}
+.title h2{
+  font-family: "Roboto Slab", serif;
+  font-size: 40px;
+  font-weight: 1200;
+  text-transform: uppercase;
+  color:white; /* White font */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Black shadow */
+  text-align: left;
+  position: absolute;
+  margin-top: 0;
+  top: 12px;
+  left: 500px;
+  right: 0;
+  padding: 10px;
+  margin: 5px 0 0;
+  z-index: 500;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Glow animation (adjusted to work with white font) */
+@keyframes glow {
+  0% {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 255, 255, 0.8);
+  }
+  100% {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+}
+.title h3{
+  font-family: "Roboto Slab", serif;
+  font-size: 40px;
+  font-weight: 1200;
+  text-transform: uppercase;
+  color:white; /* White font */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Black shadow */
+  text-align: left;
+  position: absolute;
+  margin-top: 0;
+  top: 15px;
+  left: 475px;
+  right: 0;
+  padding: 40px;
+  margin: 5px 0 0;
+  z-index: 500;
+  animation: fadeIn 1s ease-in-out;
 }
 
 /* Glow animation (adjusted to work with white font) */
@@ -124,7 +227,6 @@ body, html {
   }
 }
 
-
 .title p {
   font-size: 1rem;
   font-family: "Roboto Slab", serif;
@@ -132,31 +234,34 @@ body, html {
   color: white; /* White font */
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Black shadow */
   text-align: left;
-  padding: 30px;
-  position: relative;
-  margin-top: 0;
-  top:0;
-  left: 150px;
-  right: 0;
   padding: 20px;
-  margin: 0 auto;
+  position: absolute; /* Absolute positioning */
+  top: 120px; /* Position at the top */
+  right: 920px; /* Position to the right */
   z-index: 500;
-  background-color: transparent; /* Optional light background */
-  border-bottom: 4px solid #f9dcc4; /* Optional accent */
-  animation: fadeIn 2s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.1); /* Transparent box-like background */
+  border: 2px solid rgba(255, 255, 255, 0.5); /* Semi-transparent border */
+  border-radius: 10px; /* Rounded corners for the box */
+  padding: 20px;
+  margin: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle box shadow for depth */
+  animation: fadeInSlide 1s ease-in-out; /* Slide-in animation */
 }
 
-/* Fade-in Animation */
-@keyframes fadeIn {
+/* Fade-in and Slide-in Animation */
+@keyframes fadeInSlide {
   0% {
     opacity: 0;
+    transform: translateY(-50px); /* Slide from top */
   }
   100% {
-    opacity: 1;
-  }
+    opacity: 1;
+    transform: translateY(0); /* Settle in place */
+  }
 }
 
-/* Navbar Styling */
+
+
 nav {
   position: relative;
   z-index: 1; /* Ensure nav is above the video */
@@ -193,6 +298,7 @@ nav ul li a:hover {
   border-radius: 5px;
   transform: translateY(-5px); /* Move up slightly on hover */
 }
+
 
 /* Basic button styles */
 .contact-btn {
@@ -404,13 +510,13 @@ nav ul li a:hover {
   }
 }
 
-/* flex */
+/* Flex container setup */
 .card-container {
   display: flex;
-  gap: 20px; /* Adjust gap between cards */
-  justify-content: space-between; /* Distributes space evenly */
-  padding: 20px; /* Adds padding on the left and right ends */
-  background-color: #000000;
+  gap: 200px;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #000;
   color: whitesmoke;
   margin-top: 230px;
 }
@@ -418,52 +524,65 @@ nav ul li a:hover {
 .card {
   width: 250px;
   height: 350px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  perspective: 1000px; /* Enable 3D perspective for the flip */
   position: relative;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Smooth flip */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: transform 0.3s ease;
-  text-align: center;
-  background-size: cover; /* Ensure the background image covers the card */
-  background-position: center; /* Center the background image */
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg); /* Trigger flip on hover */
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hide the back when front is visible */
+  border-radius: 8px;
+}
+
+.card-front {
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 .card-header {
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
   padding: 10px;
-  text-align: center;
   font-size: 18px;
-  position: absolute;
-  bottom: 0;
   width: 100%;
-  transition: bottom 0.5s ease;
+  text-align: center;
 }
 
-.card-content {
-  padding: 20px; /* Adjust padding for better fit */
-  opacity: 0;
-  transform: translateY(100%);
-  transition: transform 0.5s ease, opacity 0.5s ease;
-  text-align: left; /* Align text to the left for better readability */
+.card-back {
+  background-color: #333; /* Background color for the back */
+  color: #fff;
+  transform: rotateY(180deg); /* Rotate the back face initially */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
 
-.card.active .card-header {
-  bottom: 100%;
-}
-
-.card.active .card-content {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.card p {
+.card-back .card-content {
+  text-align: left;
   font-size: 14px;
-  color: #fff9f9;
-  margin: 0; /* Remove default margin */
-  line-height: 1.5; /* Adjust line height for readability */
+  line-height: 1.5;
 }
+
 footer {
   background-color: #333;
   color: #fff;
@@ -525,6 +644,7 @@ footer::before {
       background-position: 1000px 1000px;
   }
 }
+
 
 
 
