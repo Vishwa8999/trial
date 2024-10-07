@@ -9,12 +9,10 @@ body, html {
   height: 100%;
   font-family: Arial, sans-serif;
 }
-
-/* Full-page background video */
-.video-container {
+/* Full-page background video with parallax */
+section.main-content {
   position: relative;
   height: 100vh;
-  width: 100%;
   overflow: hidden;
 }
 
@@ -22,22 +20,28 @@ body, html {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
   object-fit: cover;
-  z-index: -1; /* Send the video behind everything else */
+  z-index: -1;
 }
 
-/* Overlay to darken the background */
 .video-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(14, 14, 14, 0.5); /* Slightly transparent black */
-  z-index: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* For dark overlay */
+  z-index: 1; /* Overlay should be on top of the video */
 }
+
+header, nav, .container, .card-container {
+  position: relative;
+  z-index: 2; /* Ensure content is on top of the video and overlay */
+}
+
 
 /* Header Styling */
 .header {

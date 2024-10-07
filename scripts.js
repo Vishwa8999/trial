@@ -72,3 +72,10 @@ function closeInfo() {
     let modal = document.getElementById('info-modal');
     modal.style.display = "none";
 }
+window.addEventListener("scroll", function() {
+    const video = document.querySelector('.background-video');
+    const scrolled = window.pageYOffset;
+    
+    // Adjust the position of the video based on the scroll
+    video.style.transform = 'translateY(' + (scrolled * 0.4) + 'px)'; // Parallax effect
+});
