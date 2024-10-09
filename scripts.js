@@ -1,3 +1,16 @@
+  // JavaScript for changing header on scroll
+  window.onscroll = function() {changeHeader()};
+
+  var header = document.getElementById("header");
+  var sticky = header.offsetTop;
+
+  function changeHeader() {
+      if (window.pageYOffset > sticky) {
+          header.classList.add("sticky");
+      } else {
+          header.classList.remove("sticky");
+      }
+  }
 // Select the video element using its ID
 const backgroundVideo = document.getElementById('backgroundVideo');
 
@@ -67,15 +80,3 @@ function showInfo(college) {
 
     modal.style.display = "flex";
 }
-
-function closeInfo() {
-    let modal = document.getElementById('info-modal');
-    modal.style.display = "none";
-}
-window.addEventListener("scroll", function() {
-    const video = document.querySelector('.background-video');
-    const scrolled = window.pageYOffset;
-    
-    // Adjust the position of the video based on the scroll
-    video.style.transform = 'translateY(' + (scrolled * 0.4) + 'px)'; // Parallax effect
-});

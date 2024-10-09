@@ -1,141 +1,67 @@
-/* General Reset */
+/* styles.css */
+
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-body, html {
-  height: 100%;
-  font-family: Arial, sans-serif;
-}
-/* Full-page background video with parallax */
-section.main-content {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
+body {
+  font-family: 'Roboto Slab', serif;
+  line-height: 1.6;
+  color: #333; /* Dark text color */
+  overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
-.background-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  min-height: 100vh;
-  object-fit: cover;
-  z-index: -1;
-}
-
-.video-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
+.video-background {
+  position: relative; /* Changed to relative to allow content to flow below */
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4); /* For dark overlay */
-  z-index: 1; /* Overlay should be on top of the video */
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Hide overflowing content */
+  z-index: -1; /* Place it behind other content */
 }
 
-header, nav, .container, .card-container {
-  position: relative;
-  z-index: 2; /* Ensure content is on top of the video and overlay */
+video {
+  min-width: 100%; /* Ensure the video covers the width */
+  min-height: 100%; /* Ensure the video covers the height */
+  object-fit: cover; /* Cover the whole area without distortion */
 }
 
-
-/* Header Styling */
-.header {
+.main-header {
+  background-color:transparent; /* Semi-transparent background for readability */
+  color: #000000; /* White text */
+  padding: 0px;
   display: flex;
-  align-items: left;
-  justify-content: left;
-  padding: 20px;
-  color: white;
-  position: relative;
-  z-index: 1; /* Ensure header is above the video */
-  background: transparent;
-  font-family: "Open Sans", sans-serif;
-  font-optical-sizing: auto;
-  animation: fadeIn 1.5s ease-in-out; /* Add fade-in effect */
+  align-items: center;
+  justify-content: space-between;
+  transition: top 0.3s, background-color 0.3s; /* Smooth transition */
+  width: 100%; /* Make header full-width */
+  position: fixed; /* Keep header fixed at the top */
+  top: 0; /* Stick to the top */
+  left: 0; /* Align left */
+  right: 0; /* Align right */
+  z-index: 1; /* Keep it above the video */
 }
 
-@keyframes fadeIn {
-  0% {
-      opacity: 0;
-      transform: translateY(-20px);
-  }
-  100% {
-      opacity: 1;
-      transform: translateY(0);
-  }
-}
+ /* Pushes the logo to the left */
 
-@keyframes textGlow {
-  0% {
-      text-shadow: 2px 2px 8px rgba(234, 238, 239, 0.5), 0 0 10px #1abc9c, 0 0 20px #1abc9c;
-  }
-  100% {
-      text-shadow: 2px 2px 8px rgba(243, 238, 238, 0.5), 0 0 20px #16a085, 0 0 40px #16a085;
-  }
-}
 
-.list {
-  padding: 20px;
+.logo img1 {
+  max-width: 100px; /* Responsive logo size */
+  height: auto;
+  margin-right: 100px;
 }
-
-.logo-img img {
+.logo-img1 img {
   padding: 30px;
   height: 180px; /* Set the height of the logo */
   width: 180px; /* Ensure the width matches the height for a perfect circle */
   border-radius: 50%; /* Makes the image circular */
   position: relative; /* Positioning context for the shine effect */
   overflow: hidden; /* Hide overflow for the shine effect */
-  right: 20px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Subtle glow around the logo */
-  animation: shinePulse 5s ease-in-out infinite; /* Add pulsing effect */
+  right: 25px;
+  bottom: 20px;
+ 
 }
-
-/* Shining effect with moving light */
-.logo-img img::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -150%;
-  width: 200%;
-  height: 100%;
-  background: linear-gradient(120deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 70%);
-  transform: skewX(-20deg); /* Tilt the shine for a dynamic look */
-  animation: shineMove 2.5s ease-in-out infinite; /* Move the shine across the logo */
-}
-
-/* Animation for the moving shine */
-@keyframes shineMove {
-  0% {
-    left: -150%;
-  }
-  100% {
-    left: 150%;
-  }
-}
-
-/* Pulse animation for a glowing effect */
-@keyframes shinePulse {
-  0% {
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(255, 255, 255, 0.7);
-  }
-  100% {
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-  }
-}
-
-
-
-.name {
-  padding: 20px;
-}
-
 .title h1 {
   font-family: "Roboto Slab", serif;
   font-size: 90px;
@@ -147,11 +73,11 @@ header, nav, .container, .card-container {
   position: absolute;
   margin-top: 0;
   top:0;
-  bottom: 100px;
+  bottom: 80px;
   left: 150px;
   right: 50px;
-  padding: 10px;
-  margin: 0 auto;
+  padding: 0px;
+  margin: auto;
   z-index: 500;
   animation: fadeIn 1s ease-in-out;
 }
@@ -231,52 +157,21 @@ header, nav, .container, .card-container {
   }
 }
 
-.title p {
-  font-size: 1rem;
-  font-family: "Roboto Slab", serif;
-  font-weight: 800;
-  color: white; /* White font */
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Black shadow */
-  text-align: left;
-  padding: 20px;
-  position: absolute; /* Absolute positioning */
-  top: 120px; /* Position at the top */
-  right: 920px; /* Position to the right */
-  z-index: 500;
-  background-color: rgba(255, 255, 255, 0.1); /* Transparent box-like background */
-  border: 2px solid rgba(255, 255, 255, 0.5); /* Semi-transparent border */
-  border-radius: 10px; /* Rounded corners for the box */
-  padding: 20px;
-  margin: 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle box shadow for depth */
-  animation: fadeInSlide 1s ease-in-out; /* Slide-in animation */
-}
-
-/* Fade-in and Slide-in Animation */
-@keyframes fadeInSlide {
-  0% {
-    opacity: 0;
-    transform: translateY(-50px); /* Slide from top */
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0); /* Settle in place */
-  }
-}
-
-
 
 nav {
   position: relative;
-  z-index: 1; /* Ensure nav is above the video */
-  background-color: rgba(34, 34, 34, 0.7); /* Semi-transparent background */
-  padding: 10px 0;
+  z-index: 1000; /* Ensure nav is above the video */
+  background-color: transparent; /* Semi-transparent background */
+  padding: 10px ;
   font-family: 'Roboto', sans-serif;
   transition: background-color 0.3s ease; /* Smooth transition on hover */
+  top: 50px;
+  margin-right: 30px;
+  right: 50px;
 }
 
 nav:hover {
-  background-color: rgba(34, 34, 34, 0.9); /* Darken the navbar on hover */
+  background-color: transparent; /* Darken the navbar on hover */
 }
 
 nav ul {
@@ -288,6 +183,7 @@ nav ul {
 
 nav ul li {
   margin: 0 15px;
+  
 }
 
 nav ul li a {
@@ -298,81 +194,77 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  background-color: #444;
+  background-color: #c0f0ea;
   border-radius: 5px;
   transform: translateY(-5px); /* Move up slightly on hover */
 }
 
-
-/* Basic button styles */
-.contact-btn {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 16px;
-  color: #fff;
-  background-color: #007BFF;
-  border: none;
-  border-radius: 5px;
-  text-align: center;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+.sticky {
+  background-color: rgba(0, 179, 170, 0.963); /* Change background color when sticky */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Add shadow for better visibility */
+  z-index: 1000;
 }
 
-.contact-btn::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 300%;
-  height: 300%;
-  background-color: rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-  border-radius: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  z-index: 0;
+.content {
+  padding: 100px 20px;
 }
 
-.contact-btn span {
-  position: relative;
-  z-index: 1;
+.content-section {
+  display: flex; /* Use Flexbox to place the image and content side by side */
+  align-items: center; /* Vertically center the content */
+  justify-content: space-between; /* Adds spacing between the image and content */
+  gap: 20px; /* Space between image and content */
 }
 
-.contact-btn:hover {
-  background-color: #0056b3;
+.image img {
+  max-width: 100%; /* Ensure the image is responsive */
+  height: 60vh;
+  max-width: 500px; /* Set a max-width to prevent oversized images */
 }
 
-.contact-btn:hover::before {
-  transform: translate(-50%, -50%) scale(1);
+.text {
+  flex: 1; /* Allow the text to take the remaining space */
 }
 
-/* Centered Content Overlay */
-.content-overlay {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  color: white;
-  padding-top: 20%;
-  animation: fadeIn 2s ease-in-out; /* Fade-in for the overlay content */
-}
-
-.content-overlay h2 {
-  font-size: 3rem;
+.text h2 {
+  font-size: 2rem;
   margin-bottom: 20px;
 }
 
-.content-overlay p {
-  font-size: 1.2rem;
-  max-width: 600px;
-  margin: 0 auto;
+.text p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  .content-section {
+      flex-direction: column; /* Stack the image and text vertically on smaller screens */
+  }
+
+  .image img {
+      max-width: 100%; /* Ensure the image takes full width on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .main-header {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+      align-items: flex-start; /* Align items to the start */
+      text-align: left; /* Align text to the left */
+      padding: 10px;
+  }
+
+  .title h1 {
+      font-size: 1.5rem; /* Reduce title size on small screens */
+  }
 }
 /* DEPT */
 /* Main container for sections */
 .container, .college-section {
   margin: 0;
   padding: 10px;
-  margin-top: 230px;
+  margin-top: 10px;
+  top: 50px;
 }
 
 .container {
@@ -517,10 +409,10 @@ nav ul li a:hover {
 /* Flex container setup */
 .card-container {
   display: flex;
-  gap: 200px;
+  gap: 150px;
   justify-content: space-between;
   padding: 20px;
-  background-color: #000;
+  background-color: #e9eec6bc;
   color: whitesmoke;
   margin-top: 230px;
 }
@@ -538,7 +430,7 @@ nav ul li a:hover {
   height: 100%;
   transform-style: preserve-3d;
   transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Smooth flip */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.363);
   cursor: pointer;
 }
 
@@ -563,7 +455,7 @@ nav ul li a:hover {
 }
 
 .card-header {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: transparent;
   color: white;
   padding: 10px;
   font-size: 18px;
@@ -586,14 +478,123 @@ nav ul li a:hover {
   font-size: 14px;
   line-height: 1.5;
 }
+.associates-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+  padding: 60px 20px;
+  top: 40px;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #d0021b;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  width: 60%;
+  position: relative;
+  z-index: 1;
+}
+
+.stat {
+  text-align: center;
+  margin: 20px;
+  flex: 1;
+}
+
+.stat h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.stat p {
+  font-size: 1.2rem;
+}
+
+/* Logo container */
+.logo-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  pointer-events: none; /* Prevent interference with interaction */
+}
+
+.logo {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: float 4s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+.logo img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+/* Animation Keyframes for Floating Effect */
+@keyframes float {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-15px);
+  }
+}
+
+/* Hover Effect on Logos */
+.logo:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .logo {
+      width: 80px;
+      height: 80px;
+  }
+
+  .stats {
+      width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+      width: 60px;
+      height: 60px;
+  }
+
+  .stats {
+     width: 95%;
+    }
+}
+
 
 footer {
-  background-color: #333;
+  background-color: #00edc5;
   color: #fff;
   padding: 20px 0;
   text-align: center;
   position: relative;
   overflow: hidden;
+  top: 20px;
 }
 
 .footer-container {
@@ -689,3 +690,4 @@ footer::before {
 .social-sidebar a.instagram { background-color: #d34b78; }
 .social-sidebar a.linkedin { background-color: #0077b5; }
 .social-sidebar a.youtube { background-color: #ff0000; }
+

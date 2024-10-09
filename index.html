@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prince Dr. K. Vasudevan College Of Engineering and Technology</title> 
+    <title>Prince Dr. K. Vasudevan College Of Engineering and Technology</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
@@ -11,9 +11,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <div class="logo-img">
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="images/college.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <header class="main-header" id="header">
+        <div class="logo-container1">
+            <div class="logo-img1">
                 <img src="images/logo.png" alt="College Logo">
             </div>
         </div>
@@ -21,41 +28,37 @@
             <h1 class="name">Prince </h1>
             <h2 class="name-1">Dr.K.Vasudevan College Of</h2>
             <h3>Engineering and Technology</h3>
-            <p class="name-alt">(An Autonomous Institution) | Counseling Code: 1317</p>
         </div>
+    
+        <nav class="navbar">
+            <ul class="list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Academics</a></li>
+                <li><a href="#">Placement</a></li>
+                <li><a href="#">Infrastructure</a></li>
+                <li><a href="#">News And Events</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Clubs and Commitees</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <ul class="list">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Academics</a></li>
-            <li><a href="#">Placement</a></li>
-            <li><a href="#">Infrastructure</a></li>
-            <li><a href="#">News And Events</a></li>
-            <li><a href="#">Student Life</a></li>
-            <li><a href="#">IIC</a></li>
-            <li><a href="#">COE</a></li>
-            <li><a href="contact.html" class="contact-btn"><span>Contact Us</span></a></li>
-        </ul>
-        <ul class="list1">
-            <li><a href="hostel.html">Hostel</a></li>
-            <li><a href="#">Library</a></li>
-            <li><a href="#">Alumni</a></li>
-            <li><a href="#">Institutional Distinctiveness</a></li>
-            <li><a href="#">IQAC</a></li>
-            <li><a href="#">News And Events</a></li>
-            <li><a href="#">Help Desk</a></li>
-        </ul>
-    </nav>
-
-    <div class="parallax">
-        <video autoplay muted loop class="background-video">
-            <source src="images/college.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </section>
-
+    <div class="content">
+        <div class="content-section">
+            <div class="image">
+                <img src="images/nac.jpg" alt="College Campus">
+            </div>
+            <div class="text">
+                <h2>Welcome to Our College</h2>
+                <p>Scroll down to see the sticky header effect and more content.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis, tortor a dictum convallis, urna magna lacinia libero, ut volutpat mi risus sit amet eros. Vestibulum feugiat metus a felis fermentum varius.</p>
+                <p>More content...</p>
+                <p>More content...</p>
+            </div>
+        </div>
+    </div>
+    
     <div class="container">
         <!-- Engineering College Section -->
         <div class="college-section" id="engineering" onclick="showInfo('engineering')">
@@ -163,6 +166,42 @@
             </div>
         </div>
     </div>
+    <section class="associates-section">
+        <div class="stats">
+            <div class="stat">
+                <h3>+18000</h3>
+                <p>Students Placed</p>
+            </div>
+            <div class="stat">
+                <h3>+300</h3>
+                <p>Hiring Companies</p>
+            </div>
+            <div class="stat">
+                <h3>+21500</h3>
+                <p>Graduates</p>
+            </div>
+            <div class="stat">
+                <h3>+3105</h3>
+                <p>Opted for Higher Studies</p>
+            </div>
+        </div>
+        <!-- Floating Logos surrounding the stats box -->
+        <div class="logo-container">
+            <div class="logo" style="top: -20px; left: 10%;"><img src="images/logo1.png" alt="Deloitte Logo"></div>
+            <div class="logo" style="top: -30px; right: 20%;"><img src="images/logo2.png" alt="Tech Mahindra Logo"></div>
+            <div class="logo" style="top: 60px; left: 30%;"><img src="images/logo3.png" alt="Infosys Logo"></div>
+            <div class="logo" style="top: 100px; right: 5%;"><img src="images/logo4.jpg" alt="BHEL Logo"></div>
+            <div class="logo" style="bottom: 40px; left: 20%;"><img src="accenture.png" alt="Accenture Logo"></div>
+            <div class="logo" style="bottom: 60px; right: 10%;"><img src="wipro.png" alt="Wipro Logo"></div>
+            <div class="logo" style="bottom: -10px; left: 40%;"><img src="hcl.png" alt="HCL Logo"></div>
+            <div class="logo" style="bottom: 30px; right: 35%;"><img src="zoho.png" alt="Zoho Logo"></div>
+            <div class="logo" style="top: 120px; left: 50%;"><img src="hp.png" alt="HP Logo"></div>
+            <div class="logo" style="bottom: 20px; right: 25%;"><img src="ibm.png" alt="IBM Logo"></div>
+        </div>
+    </section>
+    
+
+    
 
     <footer>
         <div class="footer-container">
@@ -195,7 +234,7 @@
             <img src="images/Youtube-icon.jpeg" alt="YouTube">
         </a>
     </div>
-
+    
     <script src="scripts.js"></script>
 </body>
 </html>
