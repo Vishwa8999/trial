@@ -208,6 +208,41 @@ nav ul li a:hover {
 .content {
   padding: 100px 20px;
 }
+/* News Ticker Section */
+.news-ticker {
+  background-color:rgba(3, 163, 244, 0.697);
+  color: white;
+  overflow: hidden;
+  position: relative;
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.news-items {
+  white-space: nowrap;
+  display: inline-block;
+  position: absolute;
+  animation: scrollLeft 10s linear infinite;
+}
+
+.news-items span {
+  font-size: 1.0rem;
+  padding-left: 100%;
+}
+
+/* Scrolling Animation */
+@keyframes scrollLeft {
+  0% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+.news-ticker:hover .news-items {
+  animation-play-state: paused;
+}
 
 .content-section {
   display: flex; /* Use Flexbox to place the image and content side by side */
