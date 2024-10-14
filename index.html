@@ -166,6 +166,47 @@
             </div>
         </div>
     </div>
+    <section class="bulletin-board">
+    <div class="notepad-bulletin-board">
+        <h1>College Bulletin Board</h1>
+
+        <!-- Sticky note-like design for events -->
+        <div class="note event" onclick="openModal('event1')">
+            <h2>Tech Fest 2024</h2>
+            <p>October 20, 2024</p>
+        </div>
+
+        <div class="note event" onclick="openModal('event2')">
+            <h2>Guest Lecture: AI in Education</h2>
+            <p>October 25, 2024</p>
+        </div>
+
+        <div class="note event" onclick="openModal('event3')">
+            <h2>Annual Cultural Day</h2>
+            <p>November 15, 2024</p>
+        </div>
+
+    </div>
+
+    <!-- Modal for Event Details -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="event1" class="event-details">
+                <h2>Tech Fest 2024</h2>
+                <p>Join the ultimate tech fest of the year with coding competitions, workshops, and more.</p>
+            </div>
+            <div id="event2" class="event-details">
+                <h2>Guest Lecture: AI in Education</h2>
+                <p>Dr. Smith will present his insights on how AI is revolutionizing education.</p>
+            </div>
+            <div id="event3" class="event-details">
+                <h2>Annual Cultural Day</h2>
+                <p>Enjoy performances, art exhibitions, and fun activities celebrating cultural diversity.</p>
+            </div>
+        </div>
+    </div>
+    </section>
     <section class="associates-section">
         <div class="stats">
             <div class="stat">
@@ -187,16 +228,16 @@
         </div>
         <!-- Floating Logos surrounding the stats box -->
         <div class="logo-container">
-            <div class="logo" style="top: -20px; left: 10%;"><img src="images/logo1.png" alt="Deloitte Logo"></div>
-            <div class="logo" style="top: -30px; right: 20%;"><img src="images/logo2.png" alt="Tech Mahindra Logo"></div>
-            <div class="logo" style="top: 60px; left: 30%;"><img src="images/logo3.png" alt="Infosys Logo"></div>
-            <div class="logo" style="top: 100px; right: 5%;"><img src="images/logo4.jpg" alt="BHEL Logo"></div>
-            <div class="logo" style="bottom: 40px; left: 20%;"><img src="accenture.png" alt="Accenture Logo"></div>
-            <div class="logo" style="bottom: 60px; right: 10%;"><img src="wipro.png" alt="Wipro Logo"></div>
-            <div class="logo" style="bottom: -10px; left: 40%;"><img src="hcl.png" alt="HCL Logo"></div>
-            <div class="logo" style="bottom: 30px; right: 35%;"><img src="zoho.png" alt="Zoho Logo"></div>
-            <div class="logo" style="top: 120px; left: 50%;"><img src="hp.png" alt="HP Logo"></div>
-            <div class="logo" style="bottom: 20px; right: 25%;"><img src="ibm.png" alt="IBM Logo"></div>
+            <div class="logo" style="top: -20px; left: 10%;"><img src="company/logo1.png" alt="Deloitte Logo"></div>
+            <div class="logo" style="top: -30px; right: 20%;"><img src="company/logo2.png" alt="Tech Mahindra Logo"></div>
+            <div class="logo" style="top: 60px; left: 30%;"><img src="company/logo3.png" alt="Infosys Logo"></div>
+            <div class="logo" style="top: 100px; right: 5%;"><img src="company/logo4.png" alt="BHEL Logo"></div>
+            <div class="logo" style="bottom: 40px; left: 20%;"><img src="company/accenture.png" alt="Accenture Logo"></div>
+            <div class="logo" style="bottom: 60px; right: 10%;"><img src="company/wipro.png" alt="Wipro Logo"></div>
+            <div class="logo" style="bottom: -10px; left: 40%;"><img src="company/hcl.png" alt="HCL Logo"></div>
+            <div class="logo" style="bottom: 30px; right: 35%;"><img src="company/zoho.png" alt="Zoho Logo"></div>
+            <div class="logo" style="top: 120px; left: 50%;"><img src="company/hp.png" alt="HP Logo"></div>
+            <div class="logo" style="bottom: 20px; right: 25%;"><img src="company/ibm.png" alt="IBM Logo"></div>
         </div>
     </section>
     

@@ -200,7 +200,7 @@ nav ul li a:hover {
 }
 
 .sticky {
-  background-color: rgba(0, 179, 170, 0.963); /* Change background color when sticky */
+  background-color: rgba(0, 255, 242, 0.626); /* Change background color when sticky */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Add shadow for better visibility */
   z-index: 1000;
 }
@@ -477,6 +477,129 @@ nav ul li a:hover {
   text-align: left;
   font-size: 14px;
   line-height: 1.5;
+}
+
+.bulletin-board {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background-color: #f3f4f6;
+  margin: 0;
+  padding: 0;
+}
+.notepad-bulletin-board {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  position: relative;
+  
+  /* Background image properties */
+  background-image: url('images/bulletin.png');
+  background-size: cover; /* Make sure the image covers the whole area */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center center; /* Center the background image */
+}
+
+
+h1 {
+  font-size: 36px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.note {
+  background-color: #fef9c7;
+  width: 200px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+  display: inline-block;
+  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  animation: swing 2s infinite ease-in-out;
+}
+
+.note:hover {
+  transform: translateY(-10px);
+  box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.note h2 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.note p {
+  font-size: 14px;
+  color: #555;
+}
+
+.event {
+  background-color: #ffeb99; /* Sticky note-like yellow */
+}
+
+.note:nth-child(2) {
+  background-color: #ffd3b6; /* Soft orange */
+}
+
+.note:nth-child(3) {
+  background-color: #b3e5fc; /* Light blue */
+}
+
+/* Pin on the top of the note */
+.note::before {
+  content: '';
+  width: 15px;
+  height: 15px;
+  background-color: #d63031;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Swing animation */
+@keyframes swing {
+  0%, 100% { transform: rotate(3deg); }
+  50% { transform: rotate(-3deg); }
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
 }
 .associates-section {
   display: flex;

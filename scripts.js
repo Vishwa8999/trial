@@ -80,3 +80,16 @@ function showInfo(college) {
 
     modal.style.display = "flex";
 }
+function openModal(eventId) {
+    document.getElementById("modal").style.display = "flex";
+    var eventDetails = document.getElementsByClassName("event-details");
+    for (var i = 0; i < eventDetails.length; i++) {
+        eventDetails[i].style.display = "none";
+    }
+    document.getElementById(eventId).style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
+
